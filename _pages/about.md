@@ -8,8 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-About me
-======
 I am Wanqi Yuan (Chinese name: 袁万祺), a Ph.D. student at Clemson University, advised by [Prof. Nianyi Li](https://nianyil.people.clemson.edu), starting in August 2024. I received my B.E. in Software Engineering from Dalian University of Technology in 2023.
 
 My research interests lie in computer vision and computational photography. Currently, my work focuses on 3D vision with implicit representations and 3D vision under optical turbulence.
