@@ -10,7 +10,7 @@ News
 
 Selected Publications
 ------
-(Generalizable Unsupervised Microscopy Video Denoising via Weighted SpatioTemporal Sampling)[https://openaccess.thecvf.com/content/CVPR2025W/CVMI/papers/Aiyetigbo_Generalizable_Unsupervised_Microscopy_Video_Denoising_via_Weighted_SpatioTemporal_Sampling_CVPRW_2025_paper.pdf]
+[Generalizable Unsupervised Microscopy Video Denoising via Weighted SpatioTemporal Sampling](https://openaccess.thecvf.com/content/CVPR2025W/CVMI/papers/Aiyetigbo_Generalizable_Unsupervised_Microscopy_Video_Denoising_via_Weighted_SpatioTemporal_Sampling_CVPRW_2025_paper.pdf)
 - Mary Aiyetigbo, Wanqi Yuan, Feng Luo, Xin Li, Tong Ye, Nianyi Li
 - CVPRW 2025
 
