@@ -3,7 +3,7 @@ button{-webkit-appearance:none;appearance:none;color:inherit}
 a{color:var(--ink)}
 .big-arrow,.contact a span{font-family:Arial,sans-serif;font-variant-emoji:text}
 @media(max-width:620px){
- html,body{overflow-x:clip;touch-action:pan-y}
+ html,body{overflow-x:clip;touch-action:auto}
  #flying-logo{width:min(82vw,460px)}
  .intro h1{font-size:clamp(37px,10vw,52px);letter-spacing:-2px}
  .research{gap:18px}.research h2{font-size:18px}
