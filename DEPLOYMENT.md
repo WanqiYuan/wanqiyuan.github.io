@@ -1,25 +1,35 @@
-# 发布这个仓库
+# GitHub Pages 上传说明
 
-本仓库已加入完整静态网站，包括首次开屏、主页、卷轴入场与切列、List 视图、论文详情揭示及返回转场。
+这是已经编译好的静态发布包，目标站点为 https://wanqiyuan.github.io/ 。不用在 GitHub 上安装 Node 或运行 Jekyll。
 
-## GitHub Desktop
+## 第一次部署
 
-1. 查看 Changes，预计新增 30 个文件。
-2. 填写提交说明，例如 `Publish new personal website`，点击 Commit to master。
-3. 点击 Push origin。
-4. GitHub 仓库 Settings → Pages：选择 Deploy from a branch、master、/(root)。如果已是这个配置，无需再改。
-5. 等待 Pages 部署成功，访问 https://wanqiyuan.github.io/ 。首次进入自动播放开屏动画。
+1. 在 GitHub 打开 WanqiYuan/wanqiyuan.github.io 仓库。
+2. 上传本文件所在文件夹的 **全部内容** 到仓库根目录，而不是上传外层 github-pages-* 文件夹或 ZIP 本身。
+3. 确认根目录直接有 index.html、archive.html、.nojekyll、favicon.svg、404.html 和 assets/、fonts/、figures/ 文件夹。资源目录不要漏掉。
+4. 如果网页上传器没有包含 .nojekyll，请用 Add file → Create new file，在根目录创建名为 .nojekyll 的空文件。
+5. 提交更改。到 Settings → Pages，Source 选择 Deploy from a branch，选择刚上传的分支（通常 main 或 master，以仓库实际名称为准），文件夹选择 /(root)，保存。
+6. 等 Pages 部署任务成功，访问 https://wanqiyuan.github.io/ 。它自动进入个人主页并播放开屏；Publications 可进入卷轴和列表。
 
-index.html 自动进入 rhine/home.html；它不带 intro=skip，所以会播放开屏。论文页返回主页时使用 intro=skip 是预期行为。
-.nojekyll 必须一并提交，用来关闭旧版 Jekyll 构建。旧站源码保留，不需要删除；当前首页由 index.html 提供。
+旧的 Jekyll 文件不用立即删除，.nojekyll 会关闭 Jekyll 处理，新的 index.html 作为首页。不需要上传本地整个工作目录、node_modules、local、preview 或历史快照。远程仓库里若有旧版发布工作流，请停用它，避免它覆盖这份静态站点。
 
-## 内容更新
+## 后续更新
 
-- 主页信息、中文名、News、联系方式：rhine/home-data.js
-- 主页照片：rhine/portrait.png
-- 发布文件已编译，不需要在这个仓库运行 npm。
-- 论文数据及动画源码目前保存在原工作目录 F:/wanqiyuan.github.io-master/local/rhine-reference/source/RhineLabUI-main/。
-- 新增论文时修改该源码的 content/papers.json，图片放 public/figures/；按原目录 CONTENT-GUIDE.md 操作。
-- 在原工作目录运行 scripts/prepare-pages.ps1 后，将新发布包中的 rhine/ 等文件覆盖到这个仓库，检查、提交并 Push。
+- 主页文字、日期、News 和联系方式：修改 home-data.js，再上传覆盖。
+- 主页照片：替换 portrait.png，或修改 home-data.js 的 photo 并上传对应图片。
+- 新增/修改论文：在本地源码 local/rhine-reference/source/RhineLabUI-main/content/papers.json 修改数据，图片放该源码的 public/figures/。运行工作目录中的 scripts/prepare-pages.ps1 重新生成发布包，再上传覆盖。仅上传论文图片不会新增论文记录。
+- 首页开屏、卷轴及详情动画均在浏览器执行，GitHub Pages 不需要后端。
 
-没有替你创建提交或 Push；请在 GitHub Desktop 中确认更改后执行。线上部署结果以 Pages 工作流状态为准。
+## 更新打包（在原本地工作目录）
+
+PowerShell 运行：
+
+    powershell -ExecutionPolicy Bypass -File .\scripts\prepare-pages.ps1
+
+新的目录和 ZIP 放在 deploy/。每次生成独立目录，旧包可用来回滚。源码维护详见 local/rhine-reference/source/RhineLabUI-main/CONTENT-GUIDE.md。
+
+## 注意
+
+本包使用站点根目录 / 的资源路径，适用于该账号网站的根域名部署。不要再套入额外的项目子路径。当前测试的是纯静态本地发布包；线上成功与否以 GitHub Pages 部署任务结果为准。
+
+官方配置说明：https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
