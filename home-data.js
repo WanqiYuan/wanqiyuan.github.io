@@ -35,10 +35,10 @@ window.homeContent = {
   ],
   "news": [
     {
-      "date": "2026-08",
+      "date": "2026-10",
       "isNew": true,
-      "url": "https://pacificgraphics2026.github.io/",
-      "text": "One paper accepted at ",
+      "url": "https://diglib.eg.org/items/ab3aedc1-4529-4d41-89ad-5571590286de",
+      "text": "Our paper is now published at ",
       "linkText": "Pacific Graphics 2026"
     },
     {
