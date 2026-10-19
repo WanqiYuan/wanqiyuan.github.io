@@ -37,6 +37,13 @@ window.homeContent = {
     {
       "date": "2026-10",
       "isNew": true,
+      "url": "",
+      "text": "One paper accepted at WACV 2027",
+      "linkText": ""
+    },
+    {
+      "date": "2026-10",
+      "isNew": true,
       "url": "https://diglib.eg.org/items/ab3aedc1-4529-4d41-89ad-5571590286de",
       "text": "Our paper is now published at ",
       "linkText": "Pacific Graphics 2026"
